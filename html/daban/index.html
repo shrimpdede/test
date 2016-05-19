@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="dede">
+		<meta name="viewport" content="width=1, initial-scale=1,user-scalable=yes">
+		<title>Document</title>
+		<link rel=stylesheet href=jquery-mobile/jquery.mobile-1.4.5.min.css>
+		<link rel="stylesheet" href="nivo-slider/themes/default/default.css"/>
+    <link rel="stylesheet" href="nivo-slider/themes/light/light.css"/>
+    <link rel="stylesheet" href="nivo-slider/themes/dark/dark.css"/>
+    <link rel="stylesheet" href="nivo-slider/themes/bar/bar.css"/>
+    <link rel="stylesheet" href="nivo-slider/nivo-slider.css"/>
+		<script src=js/jquery.js></script>
+		<script text="text/javascript" src="nivo-slider/jquery.nivo.slider.pack.js"></script>
+		<script src=jquery-mobile/jquery.mobile-1.4.5.min.js></script>
+		<script>
+			$.mobile.pushStateEnabled = false;
+			function ShowLoader()
+			{
+				alert("show");
+				$.mobile.loading( "show", {
+            text: "loading",
+            textVisible: true,
+            theme: "a",
+            textonly: false,
+            html: ""
+    		});
+			}
+			function HideLoader()
+			{
+				alert("hide");
+				$.mobile.loading("hide");
+			}
+			
+		</script> 
+	</head>
+	<body>
+		<div data-role="page" id="page1">
+
+			<div data-role="header">
+				<h1>大阪电务站</h1>
+			</div>
+
+					
+			<div data-role="main">	
+				<div data-role="tabs" style="padding:0px;">
+					<div data-role="navbar">
+						<ul >
+							<li><a href="#div1" >first</a></li>
+							<li><a href="#div2" >second</a></li>
+							<li><a href="#div3" >third</a></li>
+							<li><a href="#div3" >third</a></li>
+						</ul>
+					</div>
+					<div id="div1">
+						<div class="slider-wrapper theme-default">
+							<div id="slider" class="slider-wrapper">
+								<img src="img/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+								<img src="img/up.jpg" data-thumb="images/up.jpg" alt="" />
+								<img src="img/walle.jpg" data-thumb="images/walle.jpg" alt="" />
+								<img src="img/nemo.jpg" data-thumb="images/nemo.jpg" alt="" />
+							</div>
+						</div>
+						<br>
+						<div>
+							<ul data-role="listview">
+								<li data-role = "list-divider" data-theme="b">
+									信息快递<a href="#"><span class="ui-li-count">[4] >></span> </a>
+								</li>
+								<li>
+									<a href="content.html" data-transition="slidefade">
+										<img src="img/chunrong.jpg" />
+										<h2>全方位“体检”整治春融“病害”</h2>
+										<p>连日来，大板电务段针对春融对道岔、信号机、信号电缆和各类信号基础等设备的季节性影响，组织各车间...</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="img/chunrong.jpg" />
+										<h2>全方位“体检”整治春融“病害”</h2>
+										<p>连日来，大板电务段针对春融对道岔、信号机、信号电缆和各类信号基础等设备的季节性影响，组织各车间...</p>
+									</a>
+								</li>
+								<li data-role = "list-divider"  data-theme="b">
+									企业文化<a href="#"><span class="ui-li-count">[4] >></span> </a>
+								</li>
+								
+								<li>
+									<a href="#">
+										<img src="img/shebeizz.jpg" />
+										<h2>“组合拳”夯实设备基础</h2>
+										<p>春运结束以来，大板电务段针对设备连续运作的实际，打出提升天窗修作业质量、加强现场包保盯控、强化微机监测调阅的“组合拳”，全面夯实设....</p>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="img/shebeizz.jpg" />
+										<h2>“组合拳”夯实设备基础</h2>
+										<p>春运结束以来，大板电务段针对设备连续运作的实际，打出提升天窗修作业质量、加强现场包保盯控、强化微机监测调阅的“组合拳”，全面夯实设....</p>
+									</a>
+								</li>					
+								<li>
+									<a href="#">
+										<img src="img/shebeizz.jpg" />
+										<h2>“组合拳”夯实设备基础</h2>
+										<p>春运结束以来，大板电务段针对设备连续运作的实际，打出提升天窗修作业质量、加强现场包保盯控、强化微机监测调阅的“组合拳”，全面夯实设....</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="div2">
+						sfsd
+					</div>
+					<div id="div3">
+						sdfsdeeeeee
+					</div>
+				</div>
+			</div>
+
+
+			<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#page1" data-icon="home" data-transition="flip">主页</a></li>
+						<li><a href="talk.html" data-icon="grid" data-transition="flip">学习园地</a></li>
+						<li><a href="#page3" data-icon="search">搜索</a></li>
+						<li><a href="#page4" data-icon="info">关于</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#slider').nivoSlider({
+			effect:"fold"});
+		</script>
+	</body>
+</html>

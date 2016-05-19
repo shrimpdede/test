@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="dede">
+		<meta name="viewport" content="width=1, initial-scale=1,user-scalable=yes">
+		<title>Content</title>
+		<link rel=stylesheet href=jquery-mobile/jquery.mobile-1.4.5.min.css>
+		<script src=js/jquery.js></script>
+		<script src=jquery-mobile/jquery.mobile-1.4.5.min.js></script>
+		<style>
+			.custom-corners .ui-bar {
+				-webkit-border-top-left-radius: inherit;
+				border-top-left-radius: inherit;
+				-webkit-border-top-right-radius: inherit;
+				border-top-right-radius: inherit;
+			}
+			.custom-corners .ui-body {
+				border-top-width: 0;
+				-webkit-border-bottom-left-radius: inherit;
+				border-bottom-left-radius: inherit;
+				-webkit-border-bottom-right-radius: inherit;
+				border-bottom-right-radius: inherit;
+			}
+		</style>
+		<script>
+			$.mobile.pushStateEnabled = false;
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="page1">
+			<div data-role="header">
+				<a href="test.html" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all" data-transition="slidefade" data-direction="reverse"></a>
+				<h1>专题a</h1>
+			</div>
+			<div data-role="content" class=-"ui-content">
+				<br>
+				<div class="custom-corners ui-corner-all">
+					<div class="ui-bar ui-bar-a">
+						<h3>弘扬雷锋精神 传递青春能量</h3>
+  				</div>
+					<div class="ui-body ui-body-a">
+						<p>
+							“大姐，您抱好孩子，我来帮你拿行李。”日前，大板电务段以“弘扬雷锋精神、志愿者与你同行”为主题，	积极开展形式多样的志愿服务活动，营造学雷锋、学先进、讲奉献的良好氛围，弘扬雷锋精神。
+							<img src="img/carousel1.jpg" style="width:100%;"></img>
+							组织青年志愿者在春运最后一天来到巴林右旗大板镇火车站，为广大旅客提供便民服务和文明宣传，主动帮助乘客托运行李包裹，协助车站工作人员疏散人流、进行乘降车引导。
+							<img src="img/information1.jpg" style="width:100%;"></img>
+							深入精神文明帮扶共建联系点巴林右旗大板镇阿日班格日嘎查哈鲁小组协助进行村容村貌整治，义务清理村道上的羊粪和白色垃圾，对村民健身广场和书屋进行打扫，对街头巷尾的小广告进行清理，以实际作为助力“内蒙古乡风文明大行动”开展。走进大板镇双龙托老院义务帮助老人打扫卫生、换洗床单，面对面与老人进行沟通交流，询问老人生活情况，并为老人表演节目，让老人切实感受到社会的温情和关心，鼓励他们保持乐观向上的良好心态，享受好老年生活。一个个小红帽在内蒙春寒料峭的三月散发着温暖气息，掀起学雷锋、弘扬志愿精神的高潮，用实际行动传递青春正能量。
+						</p>
+					</div>
+				</div>
+				<br>
+				<div class="custom-corners ui-corner-all">
+					<div class="ui-bar ui-bar-a">
+						<h3>热门评论</h3>
+  				</div>
+					<div class="ui-body ui-body-a">
+						<ul data-role="listview" id="comment">
+							<li>
+								<img src="img/head.jpeg" />
+								<p><strong>By..德德</strong> 发布于-->2016-10-11 11:30</p>
+								<p>非常好</p>
+							</li>
+							<li>
+								<img src="img/head.jpeg" />
+								<p><strong>By..德德</strong> 发布于-->2016-10-11 11:30</p>
+								<p>忍不住想赞一下</p>
+							</li>
+							<li>
+								<img src="img/head.jpeg" />
+								<p><strong>By..德德</strong> 发布于-->2016-10-11 11:30</p>
+								<p>加油</p>
+							</li>
+							<li>
+								<a href="#" data-transition="slidefade">
+									<h2>更多评论</h2>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<br><br><br><br>
+			</div>
+			<div data-role="footer" data-position="fixed" data-fullscreen="true">
+				<table>
+					<tr>
+						<td width="99%">
+							<input type="text" id="comment_text"/>
+						</td>
+						<td>
+							<a href="#" class="ui-btn ui-icon-comment ui-btn-icon-right ui-shadow ui-corner-all ui-btn-icon-notext" onclick="SendComment();"></a>
+						</td>
+					<tr>
+				</table>	
+			</div>
+		</div>
+		<script>
+			function SendComment()
+			{
+				var value=$("#comment_text").val();
+				$("#comment_text").val("")
+				var html="<li><img src='img/head.jpeg'/>";
+				html+="<p><strong>By..德德</strong> 发布于-->2016-10-11 11:30</p>";
+				html+="<p>"+value+"</p>";
+				html+="</li>";
+				$("#comment li:eq(0)").before(html);
+				$("#comment").listview("refresh");
+			}
+		</script>
+	</body>
+</html>

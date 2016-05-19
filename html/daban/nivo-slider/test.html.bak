@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="dede">
+		<title>slider</title>
+	  <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+		<script text="text/javascript" src="jquery.nivo.slider.js"></script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<div class="slider-wrapper theme-dark">
+			<div id="slider" class="slider-wrapper">
+				<img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+				<img src="images/up.jpg" data-thumb="images/up.jpg" alt="" />
+				<img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" />
+				<img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" />
+
+			</div>
+		</div>
+			<script>
+				$('#slider').nivoSlider();
+			</script>
+	</body>
+</html>

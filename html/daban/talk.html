@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Author" content="dede">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Study</title>
+		<link rel=stylesheet href=jquery-mobile/jquery.mobile-1.4.5.min.css>
+		<script src=js/jquery.min.js></script>
+		<script src=jquery-mobile/jquery.mobile-1.4.5.min.js></script>
+		<style>
+			div.message{
+				position: relative;
+				width:100%;
+				height: 180px;
+			}
+			div.message>img{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+			}
+			div.message>span{
+				position: absolute;
+				width: 50px;
+				top: 50px;
+			}
+			div.message>div{
+				position: absolute;
+				width: 55%;
+				margin:	10px 2% 10px 60px;
+				padding: 2% 3% 2% 3%;
+				background: #99ff99;
+				word-wrap: break-word;
+				word-break: break-all;
+				border: 1px solid #000033;
+				border-radius:15px;
+			}
+			div.send>img{
+				right: 0px;
+				top:0px;
+			}
+			div.recieve>span{
+				left: 1px;
+			}
+			div.send>span{
+				right:0px;
+			}
+			div.send>div{
+				right: 50px;
+			}
+			textarea.messagetext{
+				resize: none;
+				max-height: 95px;
+				font-size:18px;
+			}
+			div.messagetext{
+				max-height: 65px;
+				font-size: 18px;
+				padding: 2% 2% 3px 2%;
+				margin: 2% 10% 1% 10%;
+				border-style: solid;
+				border-color: black;
+				border-width: 0px 0px 2px 0px;
+				overflow: hidden;
+			}
+		</style>
+		<script>
+			$.mobile.pushStateEnabled = false;
+			$(document).ready(function(){
+				$("div.message>div").each(function(){
+					$(this).parent().css("min-height",$(this).height()+50);
+				});
+			});
+			function ShowSendMessage(text)
+			{
+				var html="<div class='message send'>";
+				html+="<img src='img/head.png'/> <span>dede</span>";
+				html+="<div>"+text+"</div></div>";
+				$("#talk-div").append(html);
+				$("#talk-div>div:last").css("height",$("#talk-div>div:last>div").height()+50);
+				$("body").scrollTop($("body").height());		
+			}
+			function ShowRecieveMessage(text)
+			{
+				var html="<div class='message recieve'>";
+				html+="<img src='img/head.png'/> <span>dede</span>";
+				html+="<div>"+text+"</div></div>";
+				$("#talk-div").append(html);
+				$("#talk-div>div:last").css("height",$("#talk-div>div:last>div").height()+50);
+				$("body").scrollTop($("body").height());		
+			}
+			function ChangeFooterSize()
+			{
+				$("#myfooter").toolbar("updatePagePadding");
+				$("body").scrollTop($("body").height());	
+			}
+			function SendMessage()
+			{
+				var message=$("#messagediv").html();
+				ShowSendMessage(message);
+				ShowRecieveMessage("回答正确");
+				$("#messagediv").html("");
+			}
+			showpanelflag=true;
+			function ShowAddPanel()
+			{
+				$("#addpanel").slideToggle("fast");
+				$("#plus-minus").toggleClass("ui-icon-plus")
+					$("#plus-minus").toggleClass("ui-icon-minus")
+				if(showpanelflag)
+				{	
+					
+					showpanelflag =false;
+				}
+				else
+				{
+					showpanelflag=true;
+				}
+			}
+
+		</script>
+	</head>
+		
+	<body>
+		<div id="page1" data-role="page">
+			<div data-role="header" data-position="fixed" data-tap-toggle="false">
+				<a href="test.html" data-transition="flip" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Back</a>
+				<h2>学习精灵</h2>
+			</div>
+			<div id="talk-div" data-role="main">
+				<div class="message recieve">
+					<img src="img/head.png"/>
+					<span>学习精灵</span>
+					<div>
+					桑根达来电务车间2016年1-2月份车间自培学习内容:<br>
+						1.ZPW-2000R无绝缘移频轨道电路室内设备组;<br>
+						2.ZPW-2000R无绝缘移频轨道电路室外设备组成：<br>
+						3.发送器的用途<br>
+						以上哪一条为正确的？
+					</div>
+					
+					
+				</div>
+			</div>
+			<div id="myfooter" data-role="footer" data-position="fixed" data-tap-toggle="false" >
+				<div style="position: relative;">
+					<a id="plus-minus" href="#" class="ui-btn ui-btn-left ui-icon-plus ui-btn-icon-right ui-shadow ui-corner-all ui-btn-icon-notext" style="top:auto;bottom:0px;margin-bottom:0px;" onclick="ShowAddPanel();"></a>
+					<div id="messagediv" class="messagetext" contenteditable="true" spellcheck="false">
+					</div>
+					<a href="#" class="ui-btn ui-btn-right ui-icon-comment ui-btn-icon-right ui-shadow ui-corner-all ui-btn-icon-notext" style="top:auto;bottom:0px;margin-bottom:0px;" onclick="SendMessage();"></a>
+				</div>
+				<div id="addpanel" style="display: none"><hr/>dedede<br>dede<br></div>
+			</div>
+			
+		</div>
+	</body>
+</html>
